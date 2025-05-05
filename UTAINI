@@ -1,0 +1,16 @@
+<?php
+    // Process form data when form is submitted
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        // Validate and sanitize input
+        $name = isset($_POST["name"]) ? htmlspecialchars(trim($_POST["name"])) : "";
+        
+        // Display result if input is not empty
+        if (!empty($name)) {
+            echo "<h3>Halo " . $name . "!</h3>";
+        } else {
+            echo "<p>Silakan masukkan nama Anda.</p>";
+        }
+    }
+    ?>
+</body>
+</html>
